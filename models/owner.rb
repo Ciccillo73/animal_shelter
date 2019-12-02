@@ -34,4 +34,25 @@ class Owner
     WHERE ad.owner_id = $1;"
     values = [@id]
     result result.map { |animal| Animal.new(animal)}
-  end 
+  end
+
+  def self.all()
+    sql = "SELECT * FROM owners"
+    results = SqlRunner.run( sql )
+    return results.map { |owner| Owner.new( owner ) }
+  end
+
+  def self.find( id )
+    sql = "SELECT * FROM owners
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run( sql, values )
+    return Owner.new( results.first )
+  end
+
+  def self.delete_all
+    sql = "DELETE FROM owners"
+    SqlRunner.run( sql )
+  end
+
+end
