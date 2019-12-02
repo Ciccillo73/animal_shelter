@@ -7,7 +7,7 @@ class Owner
   def initialize (options)
     @id = options['id'].to_i if options['id']
     @first_name = options['first_name']
-    @second_name = options['second_name']
+    @second_name = options['last_name']
   end
 
   def save()
@@ -22,7 +22,7 @@ class Owner
     )
     RETURNING id"
     values = [@first_name, @last_name]
-    result = SqlRunner.run(sql,values)
+    results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 

@@ -25,7 +25,7 @@ require_relative("../db/sql_runner")
       )
       RETURNING id"
       values = [@name, @breed, @type]
-      result = SqlRunner.run(sql, values)
+      results = SqlRunner.run(sql, values)
       @id = results.first()['id'].to_i
     end
 
@@ -37,7 +37,7 @@ require_relative("../db/sql_runner")
       WHERE ad.animal_id = $1;"
       values = [@id]
       results = SqlRunner.run(sql, values)
-      return result.map {|hash| Owner.new(hash)}
+      return result.map { |owner| Owner.new(owner) }
     end
 
     def self.all()
