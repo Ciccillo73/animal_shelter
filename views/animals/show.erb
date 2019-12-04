@@ -1,0 +1,19 @@
+<h1><% @animal.name %> (animal)</h1>
+
+
+<ul>
+  <% @animal.owners.each do |owner| %>
+  <li><% owner.name %></li>
+  <% end %>
+
+</ul>
+
+<h1><% @animal.breed %>(animal)</h1>
+
+<ul>
+  <% @animal.owners.each do |owner| %>
+  <li><% owner.name %></li>
+
+  <% end %>
+
+</ul>

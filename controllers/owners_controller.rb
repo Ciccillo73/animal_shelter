@@ -3,8 +3,8 @@ require( 'sinatra/contrib/all' )
 require_relative( '../models/owner.rb' )
 also_reload( '../models/*' )
 
-get '/users' do
-  @owner = Owner.all()
+get '/owners' do
+  @owners = Owner.all()
   erb ( :"owners/index" )
 end
 

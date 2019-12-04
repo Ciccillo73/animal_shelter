@@ -8,13 +8,15 @@ CREATE TABLE animals
   id SERIAL8 primary key,
   name VARCHAR(255) not null,
   breed VARCHAR(255),
-  type VARCHAR(255)
+  type VARCHAR(255),
+  adoption_date VARCHAR(255),
+  adoptable BOOLEAN
 );
 
 CREATE TABLE owners(
   id SERIAL8 primary key,
   first_name VARCHAR(255) not null,
-  last_name VARCHAR(255)
+  last_name VARCHAR(255)  not null
 );
 
 CREATE TABLE adoptions(

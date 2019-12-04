@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Animals</title>
+</head>
+<body>
+  <h1>Animals</h1>
+  <table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Breed</th>
+    <th></th>
+    <th>Type</th>
+    <th></th>
+    <th>Adoption_date</th>
+    <th></th>
+    <th>Adoptble</th>
+  </tr>
+  <% for animal in @animals %>
+  <tr>
+    <td><a href="/animals/<% animal.id %>"><%= animal.name %><% animal.breed %><% animal.type %><% animal.adoption_date %><% animal.adoptable %></animal.type></a></td>
+    <td>|</td>
+    <td><% Animal.all %></td>
+
+  </tr>
+  <% end %>
+  </table>
+
+</body>
+</html>

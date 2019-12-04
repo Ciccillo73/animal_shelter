@@ -7,7 +7,7 @@ require_relative( '../models/animal.rb' )
 
 also_reload( '../models/*' )
 
-get '/adoption' do
+get '/adoptions' do
   @adoptions = Adoption.all
 
   erb ( :"adoptions/index" )
@@ -15,17 +15,17 @@ end
 
 get '/adoptions/new' do
   @owners = Owner.all
-  @animals = Animals.all
+  @animals = Animal.all
   erb(:"adoptions/new")
 end
 
 post '/adoptions' do
-  adoption =Adoption.new(params)
+  adoption = Adoption.new(params)
   adoption.save
   redirect to("/adoptions")
 end
 
 post '/adoptions/:id/delete' do
-  Adoptiong.destroy(params[:id])
+  Adoption.destroy(params[:id])
   redirect to("/adoptions")
 end

@@ -38,7 +38,9 @@ owner4.save()
 animal1 = Animal.new({
   "name" => "Puff",
   "breed" => "Bulldog",
-  "type" => "Dog"
+  "type" => "Dog",
+  "adoption_date" => "1/DEC/2018",
+  "adoptable" => true
   })
 
 animal1.save()
@@ -46,7 +48,9 @@ animal1.save()
 animal2 = Animal.new({
   "name" => "Melly",
   "breed" => "Munchkin",
-  "type" => "Cat"
+  "type" => "Cat",
+  "adoption_date" => "5/OCT/2018",
+  "adoptable" => true
   })
 
 animal2.save()
@@ -54,7 +58,9 @@ animal2.save()
 animal3 = Animal.new({
   "name" => "Spike",
   "breed" => "Labrador",
-  "type" => "Dog"
+  "type" => "Dog",
+  "adoption_date" => "3/MAR/2019",
+  "adoptable" => false
   })
 
 animal3.save()
@@ -62,7 +68,9 @@ animal3.save()
 animal4 = Animal.new({
   "name" => "Buddy",
   "breed" => "Shiba",
-  "type" => "Dog"
+  "type" => "Dog",
+  "adoption_date" => "12/JUL/2018",
+  "adoptable" => true
   })
 
 animal4.save()
